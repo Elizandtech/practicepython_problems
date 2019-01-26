@@ -10,13 +10,19 @@ while True:
         if game != 'no' and game != '':
             raise Exception
 
-        player_1 = input("Player One: enter rock, paper or scissors: ")
-        if player_1 !='rock' and player_1 !='scissors' and player_1 !='paper':
-            raise Exception
+        while True:
+            try:
+                player_1 = input("Player One: enter rock, paper or scissors: ")
+                if player_1 !='rock' and player_1 !='scissors' and player_1 !='paper':
+                    raise Exception
 
-        player_2 = input("Player Two: enter rock, paper or scissors: ")
-        if player_2 !='rock' and player_2 !='scissors' and player_2 !='paper':
-            raise Exception
+                player_2 = input("Player Two: enter rock, paper or scissors: ")
+                if player_2 !='rock' and player_2 !='scissors' and player_2 !='paper':
+                    raise Exception
+                break
+            except:
+                print('Invalid entry')
+                continue
 
     except:
         print("Incorrect input")
@@ -44,5 +50,7 @@ while True:
 
     elif player_1 == 'rock' and player_2 == 'paper':
         print(Two)
+    else:
+        print("It's tied!")
 
 print("See you later! ")
