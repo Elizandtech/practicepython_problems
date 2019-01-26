@@ -31,25 +31,12 @@ while True:
     Two = ('Player 2 Wins!! '+ player_2 + ' beats '+ player_1)
     One = ('Player 1 Wins!! '+ player_1 + ' beats '+ player_2)
 
-
-# rock>scissors, scissors>paper, paper>rock; tie if same
-    if player_1 == 'rock' and player_2 == 'scissors':
+    if (player_1 == 'rock' and player_2 == 'scissors') or (player_1 == 'scissors' and player_2 == 'paper') or (player_1 == 'paper' and player_2 == 'rock'):
         print(One)
-    
-    elif player_1 == 'scissors' and player_2 == 'paper':
-       print(One)
 
-    elif player_1 == 'paper' and player_2 == 'rock':
-       print(One)
-
-    elif player_1 == 'scissors' and player_2 == 'rock':
+    elif (player_1 == 'scissors' and player_2 == 'rock') or (player_1 == 'paper' and player_2 == 'scissors') or (player_1 == 'rock' and player_2 == 'paper'):
         print(Two)
 
-    elif player_1 == 'paper' and player_2 == 'scissors':
-        print(Two)
-
-    elif player_1 == 'rock' and player_2 == 'paper':
-        print(Two)
     else:
         print("It's tied!")
 
