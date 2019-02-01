@@ -7,12 +7,13 @@ import ssl
 
 
 # request a webpage:
-r = requests.get('https://www.nytimes.com')  
+url = input('Enter a url: ')
+r = requests.get(url)  
 # r is a Response object
 
 # convert content to something we can read/parse:
 string_html = r.text
 
-parsed_html = BeautifulSoup(string_html, "html.parser")
-title = parsed_html.find('span', 'articletitle').string
+parsed_html = BeautifulSoup(string_html,'html.parser')
+title = parsed_html.find('span','articletitle').string
 print(title)
