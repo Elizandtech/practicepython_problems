@@ -15,5 +15,13 @@ r = requests.get(url)
 string_html = r.text
 
 parsed_html = BeautifulSoup(string_html,'html.parser')
-title = parsed_html.find('span','articletitle').string
+
+# retrieve first instanct of h1 tag:
+title = parsed_html.find('h1')
+
+# retrieve a list of all h1 tags:
+#title = parsed_html.find_all('h1')
 print(title)
+
+for tag in title:
+    print(tag)
