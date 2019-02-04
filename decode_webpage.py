@@ -17,12 +17,11 @@ string_html = r.text
 # BeautifulSoup object with nested data structure
 parsed_html = BeautifulSoup(string_html,'html.parser')
 
-# retrieve first instanct of h1 tag:
-#header = parsed_html.find('h1')
+# retrieve first instanct of a header tag:
+#header = parsed_html.find('h2')
 
-# retrieve a list of all h1 tags:
-header = parsed_html.find_all('h1')
-#print(header)
+# retrieve a list of all specified header tags:
+header_tags = parsed_html.find_all('h2')
+#print(header_tags)
 
-for tag in header:
-    print(tag.contents)
+print([tag.contents for tag in header_tags])
