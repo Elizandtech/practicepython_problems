@@ -23,5 +23,9 @@ parsed_html = BeautifulSoup(string_html,'html.parser')
 # retrieve a list of all specified header tags:
 header_tags = parsed_html.find_all('h2')
 #print(header_tags)
+        
 
-print([tag.contents for tag in header_tags])
+# get list of header content (in this case news headlines)
+content = [tag.contents for tag in header_tags]
+
+print([string for element in content for string in element])
