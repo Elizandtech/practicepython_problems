@@ -3,22 +3,22 @@
 
 
 def check_if_palindrome(string):
+    # account for uppercase in string
     make_same = string.casefold()
+
+    if len(make_same)<1:
+            raise ValueError('Enter key value " " not valid') 
+    
     index_value = len(make_same)-1
     
     for char in make_same:
-        if len(make_same)<1:
-            raise ValueError('Enter key value "" not valid')
-        if make_same[-1]=='!' or make_same[-1]=='.' or make_same=='?':
-            index_value = index_value-1
-            continue
+        if make_same[-1] =='!' or make_same[-1] =='.' or make_same =='?':
+            raise ValueError("'!', '.', or '?' used. Omit and try again")
 
-        if make_same[0] != make_same[-1]:
+        elif make_same[0] != make_same[-1]:
             return 'Not a palindrome'
         
-
-      
-        if char ==make_same[index_value]:
+        elif char == make_same[index_value]:
             index_value = index_value-1
             
     return "It's a palindrome!"
